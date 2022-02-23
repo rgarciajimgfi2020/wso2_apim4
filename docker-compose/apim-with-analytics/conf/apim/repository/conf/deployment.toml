@@ -1,5 +1,6 @@
 [server]
 hostname = "192.168.1.157"
+#node_ip = "192.168.1.157"
 #offset=0
 base_path = "${carbon.protocol}://${carbon.host}:${carbon.management.port}"
 #discard_empty_caches = false
@@ -100,21 +101,21 @@ enable = true
 config_endpoint = "https://analytics-event-auth.choreo.dev/auth/v1"
 auth_token = "<on-prem-key>"
 
-#[apim.key_manager]
-#service_url = "https://localhost:${mgt.transport.https.port}/services/"
-#username = "$ref{super_admin.username}"
-#password = "$ref{super_admin.password}"
+[apim.key_manager]
+service_url = "https://localhost:${mgt.transport.https.port}/services/"
+username = "$ref{super_admin.username}"
+spassword = "$ref{super_admin.password}"
 #pool.init_idle_capacity = 50
 #pool.max_idle = 100
 #key_validation_handler_type = "default"
 #key_validation_handler_type = "custom"
 #key_validation_handler_impl = "org.wso2.carbon.apimgt.keymgt.handlers.DefaultKeyValidationHandler"
 
-#[apim.idp]
-#server_url = "https://localhost:${mgt.transport.https.port}"
-#authorize_endpoint = "https://localhost:${mgt.transport.https.port}/oauth2/authorize"
-#oidc_logout_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/logout"
-#oidc_check_session_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/checksession"
+[apim.idp]
+server_url = "https://192.168.1.157:${mgt.transport.https.port}"
+authorize_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oauth2/authorize"
+oidc_logout_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oidc/logout"
+oidc_check_session_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oidc/checksession"
 
 #[apim.jwt]
 #enable = true
@@ -134,8 +135,8 @@ auth_token = "<on-prem-key>"
 #enable_token_encryption = false
 #enable_token_hashing = false
 
-#[apim.devportal]
-#url = "https://localhost:${mgt.transport.https.port}/devportal"
+[apim.devportal]
+url = "https://192.168.1.157:${mgt.transport.https.port}/devportal"
 #enable_application_sharing = false
 #if application_sharing_type, application_sharing_impl both defined priority goes to application_sharing_impl
 #application_sharing_type = "default" #changed type, saml, default #todo: check the new config for rest api
