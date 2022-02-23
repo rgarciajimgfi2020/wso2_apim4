@@ -46,7 +46,61 @@ services:
         condition: service_healthy
     volumes:
       - ./conf/apim:/home/wso2carbon/wso2-config-volume
+    # ports:
+    #   - "9443:9443"
+    #   - "8280:8280"
+    #   - "8243:8243"
     ports:
-      - "9443:9443"
-      - "8280:8280"
-      - "8243:8243"
+      - target: 9443
+        published: 9443
+        protocol: tcp
+        mode: host
+      - target: 8280
+        published: 8280
+        protocol: tcp
+        mode: host
+      - target: 8243
+        published: 8243
+        protocol: tcp
+        mode: host
+      - target: 5672
+        published: 5672
+        protocol: tcp
+        mode: host 
+      - target: 8672
+        published: 8672
+        protocol: tcp
+        mode: host
+      - target: 9611
+        published: 9611
+        protocol: tcp
+        mode: host   
+      - target: 9711
+        published: 9711
+        protocol: ssl
+        mode: host
+      - target: 9612
+        published: 9612
+        protocol: tcp
+        mode: host   
+      - target: 9712
+        published: 9712
+        protocol: ssl
+        mode: host
+      - target: 8099
+        published: 8099
+        protocol: tcp
+        mode: host   
+      - target: 9099
+        published: 9099
+        protocol: ssl
+        mode: host
+      - target: 10005  
+        published: 10005
+        protocol: tcp
+        mode: host
+      - target: 11224
+        published: 11224
+        protocol: tcp
+        mode: host
+      - "4500:4500"
