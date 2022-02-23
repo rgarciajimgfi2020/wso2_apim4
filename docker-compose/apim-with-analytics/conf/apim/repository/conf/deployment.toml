@@ -1,6 +1,6 @@
 [server]
 hostname = "192.168.1.157"
-#node_ip = "192.168.1.157"
+node_ip = "192.168.1.157"
 #offset=0
 base_path = "${carbon.protocol}://${carbon.host}:${carbon.management.port}"
 #discard_empty_caches = false
@@ -35,19 +35,19 @@ password =  "wso2carbon"
 alias =  "wso2carbon"
 key_password =  "wso2carbon"
 
-#[keystore.primary]
-#file_name =  "wso2carbon.jks"
-#type =  "JKS"
-#password =  "wso2carbon"
-#alias =  "wso2carbon"
-#key_password =  "wso2carbon"
+[keystore.primary]
+file_name =  "wso2carbon.jks"
+type =  "JKS"
+password =  "wso2carbon"
+alias =  "wso2carbon"
+key_password =  "wso2carbon"
 
-#[keystore.internal]
-#file_name =  "wso2carbon.jks"
-#type =  "JKS"
-#password =  "wso2carbon"
-#alias =  "wso2carbon"
-#key_password =  "wso2carbon"
+[keystore.internal]
+file_name =  "wso2carbon.jks"
+type =  "JKS"
+password =  "wso2carbon"
+alias =  "wso2carbon"
+key_password =  "wso2carbon"
 
 [[apim.gateway.environment]]
 name = "Default"
