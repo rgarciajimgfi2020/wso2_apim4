@@ -97,7 +97,7 @@ gateway_labels =["Default"]
 #expiry_time = "2m"
 
 [apim.analytics]
-enable = true
+enable = false
 config_endpoint = "https://analytics-event-auth.choreo.dev/auth/v1"
 auth_token = "<on-prem-key>"
 
