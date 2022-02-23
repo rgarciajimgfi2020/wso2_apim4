@@ -111,11 +111,11 @@ spassword = "$ref{super_admin.password}"
 #key_validation_handler_type = "custom"
 #key_validation_handler_impl = "org.wso2.carbon.apimgt.keymgt.handlers.DefaultKeyValidationHandler"
 
-[apim.idp]
-server_url = "https://192.168.1.157:${mgt.transport.https.port}"
-authorize_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oauth2/authorize"
-oidc_logout_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oidc/logout"
-oidc_check_session_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oidc/checksession"
+#[apim.idp]
+#server_url = "https://192.168.1.157:${mgt.transport.https.port}"
+#authorize_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oauth2/authorize"
+#oidc_logout_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oidc/logout"
+#oidc_check_session_endpoint = "https://192.168.1.157:${mgt.transport.https.port}/oidc/checksession"
 
 #[apim.jwt]
 #enable = true
