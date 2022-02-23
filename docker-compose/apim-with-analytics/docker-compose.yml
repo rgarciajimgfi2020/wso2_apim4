@@ -35,7 +35,6 @@ services:
       retries: 5
       start_period: 80s
   api-manager01:
-    # hostname: wso2apim.com
     build: ./dockerfiles/apim
     healthcheck:
       test: ["CMD", "nc", "-z","localhost", "9443"]
@@ -65,7 +64,6 @@ services:
       - "11224:11224"
       - "4500:4500"
   api-manager02:
-    # hostname: wso2apim.com
     build: ./dockerfiles/apim
     healthcheck:
       test: ["CMD", "nc", "-z","localhost", "9443"]
