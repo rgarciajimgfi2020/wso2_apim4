@@ -101,7 +101,7 @@ config_endpoint = "https://analytics-event-auth.choreo.dev/auth/v1"
 auth_token = "<on-prem-key>"
 
 [apim.key_manager]
-service_url = "https://localhost:${mgt.transport.https.port}/services/"
+service_url = "https://192.168.1.157:${mgt.transport.https.port}/services/"
 username = "$ref{super_admin.username}"
 password = "$ref{super_admin.password}"
 #pool.init_idle_capacity = 50
@@ -135,7 +135,7 @@ password = "$ref{super_admin.password}"
 #enable_token_hashing = false
 
 [apim.devportal]
-url = "https://localhost:${mgt.transport.https.port}/devportal"
+url = "https://192.168.1.157:${mgt.transport.https.port}/devportal"
 #enable_application_sharing = false
 #if application_sharing_type, application_sharing_impl both defined priority goes to application_sharing_impl
 #application_sharing_type = "default" #changed type, saml, default #todo: check the new config for rest api
