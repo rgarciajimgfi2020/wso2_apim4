@@ -156,12 +156,12 @@ allow_methods = ["GET","PUT","POST","DELETE","PATCH","OPTIONS"]
 allow_headers = ["authorization","Access-Control-Allow-Origin","Content-Type","SOAPAction","apikey","Internal-Key"]
 allow_credentials = false
 
-#[apim.throttling]
+[apim.throttling]
 #enable_data_publishing = true
 #enable_policy_deploy = true
 #enable_blacklist_condition = true
 #enable_persistence = true
-#throttle_decision_endpoints = ["tcp://192.168.1.157:5672","tcp://192.168.1.157:5672"]
+throttle_decision_endpoints = ["tcp://192.168.1.157:5672","tcp://192.168.1.157:5672"]
 
 #[apim.throttling.blacklist_condition]
 #start_delay = "5m"
