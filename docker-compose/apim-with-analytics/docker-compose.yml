@@ -34,7 +34,7 @@ services:
       timeout: 60s
       retries: 5
       start_period: 80s
-  api-manager:
+  api-manager01:
     # hostname: wso2apim.com
     build: ./dockerfiles/apim
     healthcheck:
@@ -46,7 +46,37 @@ services:
       mysql:
         condition: service_healthy
     volumes:
-      - ./conf/apim:/home/wso2carbon/wso2-config-volume
+      - ./conf/apim01:/home/wso2carbon/wso2-config-volume
+    ports:
+      - "9443:9443"
+      - "8280:8280"
+      - "8243:8243"
+      - "5672:5672"
+      - "8672:8672"
+      - "9611:9611"
+      - "9711:9711"
+      - "9612:9612"
+      - "9712:9712"
+      - "8099:8099"
+      - "9021:9021"
+      - "8021:8021"
+      - "9099:9099"
+      - "10005:10005"
+      - "11224:11224"
+      - "4500:4500"
+  api-manager02:
+    # hostname: wso2apim.com
+    build: ./dockerfiles/apim
+    healthcheck:
+      test: ["CMD", "nc", "-z","localhost", "9443"]
+      interval: 10s
+      start_period: 180s
+      retries: 20
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./conf/apim02:/home/wso2carbon/wso2-config-volume
     ports:
       - "9443:9443"
       - "8280:8280"
